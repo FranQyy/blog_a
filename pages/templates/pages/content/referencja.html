@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+
+{% block header %}
+<div id='bar-header'>
+  <h1>{{ czlonek_zespolu.first_name }} {{ czlonek_zespolu.last_name }}</h1>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div id='bar-content'>
+  <h4>{{ referencja.nazwa }}</h4><br>
+  <img src="{% if referencja.skan %}{{ referencja.skan.url }}{% else %}{% endif %}" id="foto-referencja">
+</div>
+<br>
+{% endblock content %}

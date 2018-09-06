@@ -1,0 +1,112 @@
+{% load static %}
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta property="og:title" content="blog" />
+  <meta property="og:type" content="image/png" />
+  <meta property="og:url" content="http://localhost:8000/o-nas" />
+  <meta property="og:image" content="http://localhost:8000/static/pages/logo.png" /> 
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="300" />
+  
+  <title>{% block title %}BLOG{% endblock %}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}  
+
+  <link rel="stylesheet" type="text/css" href="{% static 'pages/style.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+
+  <link rel="shortcut icon" type="image/png" href="{% static 'pages/logo.png' %}">
+
+</head>
+
+<body>
+<div id='container'>
+  <div id="header">
+    
+  <nav class="navbar navbar-expand-md navbar-light fixed-top ">
+    <a class="navbar-brand" href="{% url 'pages:index' %}">
+      <img src="{% static 'pages/logo.png' %}" width="100" height="100" class="d-inline-block align-top" alt="">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-center order-2" id="navbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'pages:index' %}">Strona główna <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pages:o_nas' %}">O Nas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:uslugi' %}">Usługi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:aktualnosci' %}">Aktualności</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'pages:kontakt' %}">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+  <div id="body">
+    <div class='page-header'>
+      {% block header %}{% endblock header %}
+    </div>
+    <div class='page-content'>
+        {% block content %}{% endblock content %}
+    </div>
+  </div>
+  
+
+  <div id='footer'>
+    <div class='row justify-content-center' style="width:100%; background: rgb(26, 26, 26); min-height: 220px; padding-top: 20px; padding-left: 20%; margin: 0px">
+      
+      <div class='col-6' style="text-align: left">
+          <b><h4 style="color:white">Ratione:</h4></b>
+          Pon. 8:00 - 17:00<br>
+          Wt. 8:00 - 17:00<br>
+          Śr. 8:00 - 17:00<br>
+          Czw. 8:00 - 17:00<br>
+          Pt. 8:00 - 17:00<br>
+      </div>      
+      <div class='col-6' style="text-align: left">
+          <b><h4 style="color: white">Ratione:</h4></b>
+          Blog<br><br>
+          
+          ul. yyyyyyyyyy 12,<br>
+          40-999 xxxxxxx <br><br> 
+          
+          e-mail: xx.xx.xx1@blichtr.com.pl<br>
+          tel./fax: 45 54 c4 45<br>
+          kom.: 455 c54 454<br>
+      </div>
+
+
+    </div>
+
+    <div class='row justify-content-center' style="width:100%; min-height: 40px; text-align: center; padding-top:10px; margin: 0px;">
+      © 2018 Copyright by FrancQyy | Wszelkie prawa zastrzeżone 
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

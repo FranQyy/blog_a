@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+
+{% block header %}
+<div id='bar-header'>
+  <h1>  {{ wpis.temat }}    </h1>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div id="bar-content">
+  {{ wpis.tekst }}
+  <br><br>
+  <a href="{% url 'pages:aktualnosci' %}"><div class="btn" id="btn-gold">Wróc do aktualności</div></a>
+</div>
+{% endblock content %}

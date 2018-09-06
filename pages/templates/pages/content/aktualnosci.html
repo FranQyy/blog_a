@@ -1,0 +1,23 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+
+{% block header %}
+<div id='bar-header'>
+  <h1>Aktualności</h1>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div id='bar-content'>
+  <div class="card card-body">
+  {% for wpis in wpisy %}
+    <h4>{{ wpis.temat }}</h4>
+    <p>{{ wpis.tekst | truncatewords:25 }}</p>
+    <p style="text-align: right; font-size: 13px">Dodano: {{ wpis.date_added.date }} r.</p>
+    <a href="{{ wpis.get_absolute_url }}" class="btn" id="btn-gold">Czytaj więcej</a>
+  {% endfor %}
+  </div>
+</div>
+{% endblock content %}

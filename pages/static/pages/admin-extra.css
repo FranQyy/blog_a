@@ -1,0 +1,20 @@
+#header{
+  background-color: #333941;
+}
+
+#container{
+  background-color: #f2f2f2;
+}
+
+.module caption{
+  background-color: #333941;
+}
+
+div.breadcrumbs{
+  color: #79aec8;
+  background-color: #f5dd5d;
+}
+
+div.breadcrumbs a{
+  color: #000000;
+}
